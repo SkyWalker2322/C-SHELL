@@ -5,6 +5,7 @@
 #include "./ls/ls.h"
 #include "./bfg/bfg.h"
 #include "headers.h"
+#include "./redirection/redirection.h"
 
 void free_char_arry(char *a, long long int len)
 {
@@ -77,6 +78,16 @@ void command_execute(char cmdline[])
         if (args[j][0] == '&')
         {
             its_bg = 1;
+            break;
+        }
+        j++;
+    }
+    j = 0;
+    while (strlen(args[j]) > 0)
+    {
+        if (args[j][0] == '<'|| args[j][0] == '>')
+        {
+            redirections(cmdline);
             break;
         }
         j++;
