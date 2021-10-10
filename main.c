@@ -6,13 +6,13 @@
 #include "./bfg/bfg.h"
 #include "headers.h"
 #include "./redirection/redirection.h"
+#include "./pipe/pipe.h"
 
 void free_char_arry(char *a, long long int len)
 {
     for (long long int i = 0; i < len; i++)
         a[i] = '\0';
 }
-void command_execute(char cmdline[]);
 
 int main()
 {
@@ -78,6 +78,16 @@ void command_execute(char cmdline[])
         {
             its_bg = 1;
             break;
+        }
+        j++;
+    }
+    j = 0;
+    while (strlen(args[j]) > 0)
+    {
+        if (args[j][0] == '|')
+        {
+            exec_pipe(cmdline);
+            return;
         }
         j++;
     }

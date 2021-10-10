@@ -17,6 +17,7 @@
 #include <sys/utsname.h>
 
 void free_char_arry(char* a,long long int len);
+void command_execute(char cmdline[]);
 
 char shelldir[10001];
 int shelldirlen;
