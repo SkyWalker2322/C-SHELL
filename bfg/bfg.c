@@ -28,6 +28,7 @@ void exec_bfgcommands(char cmd[], char cmdline[], int its_bg)
     {
         argx[count] = token;
         token = strtok(NULL, " ");
+        //printf("%s\n", argx[count]);
         count++;
     }
     

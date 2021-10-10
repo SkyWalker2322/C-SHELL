@@ -66,11 +66,10 @@ void command_execute(char cmdline[])
     while (token != NULL)
     {
         strcpy(args[count], token);
-        //printf("%s\n",cmd[count]);
         token = strtok(NULL, " \n\t\r");
         count++;
     }
-    //printf("\n");
+    
     int its_bg = 0, j = 0;
     int rn,b=1;
     while (strlen(args[j]) > 0)
@@ -88,7 +87,7 @@ void command_execute(char cmdline[])
         if (args[j][0] == '<'|| args[j][0] == '>')
         {
             redirections(cmdline);
-            break;
+            return;
         }
         j++;
     }
