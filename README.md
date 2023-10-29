@@ -12,4 +12,4 @@ pwd: current working directory
 repeat: repeat a given process n times
 
 * My shell can implement 2 commands seperated by ;
-* and Runs a command in backgroung with '&'
+* and Runs a command in backgroung with '&' and
